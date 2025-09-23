@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sukham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌿 Sukham</h2>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-tab active" data-tab="chat">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-tab" data-tab="progress">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress</span>
+                </button>
+                <button class="nav-tab" data-tab="schedule">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Schedule</span>
+                </button>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-greeting">Hello, Priya 👋</span>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <button class="nav-btn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="nav-btn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <a href="index.html" class="nav-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <!-- Chat Tab Content -->
+        <section class="tab-content active" id="chat-tab">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <h2>Sukham AI Assistant</h2>
+                        <p>I'm here to support your mental wellness journey. How can I help you today?</p>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="chat-action-btn" title="Clear conversation">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="chat-action-btn" title="Export chat">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="main-chat-messages">
+                    <div class="message-container">
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    <p>Hello Priya! 🌸 I'm your personal AI wellness companion. I'm here to provide support, guidance, and a listening ear whenever you need it.</p>
+                                    <p>I can help you with:</p>
+                                    <ul>
+                                        <li>🧘‍♀️ Stress management and relaxation techniques</li>
+                                        <li>😌 Anxiety and mood support</li>
+                                        <li>📚 Study stress and academic pressure</li>
+                                        <li>😴 Sleep and self-care guidance</li>
+                                        <li>🎯 Goal setting and motivation</li>
+                                    </ul>
+                                    <p>What's on your mind today?</p>
+                                </div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <textarea id="main-chat-input" placeholder="Share what's on your mind... I'm here to listen and help." rows="1"></textarea>
+                        <div class="chat-input-actions">
+                            <button class="chat-input-btn" id="attach-btn" title="Attach file">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="chat-input-btn" id="emoji-btn" title="Add emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                            <button class="chat-send-btn" id="main-send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-suggestions">
+                        <button class="suggestion-btn">I'm feeling stressed about exams</button>
+                        <button class="suggestion-btn">Help me with anxiety</button>
+                        <button class="suggestion-btn">I need motivation</button>
+                        <button class="suggestion-btn">Sleep problems</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tab Content -->
+        <section class="tab-content" id="progress-tab">
+            <div class="container">
+                <div class="tab-header">
+                    <h2>Your Wellness Progress</h2>
+                    <p>Track your mental health journey and celebrate your achievements</p>
+                </div>
+                
+                <!-- Progress Chart Card (Full Width) -->
+                <div class="dashboard-card progress-card progress-chart-full">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> 30-Day Wellness Progress</h3>
+                        <select class="time-filter">
+                            <option value="30">Last 30 days</option>
+                            <option value="7">Last 7 days</option>
+                            <option value="90">Last 3 months</option>
+                        </select>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Progress Grid for Side-by-Side Content -->
+                <div class="progress-bottom-grid">
+                    <!-- Weekly Stats Card -->
+                    <div class="dashboard-card stats-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-pie"></i> This Week's Stats</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">12</div>
+                                    <div class="stat-label">Chat Sessions</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">85%</div>
+                                    <div class="stat-label">Tasks Completed</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">6</div>
+                                    <div class="stat-label">Mindful Minutes</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4.2</div>
+                                    <div class="stat-label">Avg Mood Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements Card -->
+                    <div class="dashboard-card achievements-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="achievement-list">
+                                <div class="achievement-item earned">
+                                    <div class="achievement-icon">🏆</div>
+                                    <div class="achievement-text">
+                                        <h4>7-Day Streak</h4>
+                                        <p>Completed daily check-ins</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item earned">
+                                    <div class="achievement-icon">🌱</div>
+                                    <div class="achievement-text">
+                                        <h4>Mindful Beginner</h4>
+                                        <p>First meditation session</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">💪</div>
+                                    <div class="achievement-text">
+                                        <h4>Resilience Builder</h4>
+                                        <p>Complete 30 breathing exercises</p>
+                                    </div>
+                                    <div class="achievement-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                        <span>18/30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Tab Content -->
+        <section class="tab-content" id="schedule-tab">
+            <div class="container">
+                <div class="tab-header">
+                    <h2>Wellness Schedule</h2>
+                    <p>Plan and track your daily wellness activities</p>
+                </div>
+                
+                <div class="schedule-grid">
+                    <!-- Today's Schedule Card -->
+                    <div class="dashboard-card schedule-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-calendar-day"></i> Today's Activities</h3>
+                            <button class="add-task-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="task-list">
+                                <div class="task-item completed">
+                                    <input type="checkbox" checked id="task1">
+                                    <label for="task1">Morning meditation (10 min)</label>
+                                    <span class="task-time">8:00 AM</span>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task2">
+                                    <label for="task2">Breathing exercise</label>
+                                    <span class="task-time">2:00 PM</span>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task3">
+                                    <label for="task3">Evening journaling</label>
+                                    <span class="task-time">8:00 PM</span>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="task4">
+                                    <label for="task4">Gratitude practice</label>
+                                    <span class="task-time">9:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Card -->
+                    <div class="dashboard-card actions-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="action-buttons">
+                                <button class="action-btn breathing-btn">
+                                    <div class="action-icon">
+                                        <i class="fas fa-lungs"></i>
+                                    </div>
+                                    <div class="action-text">
+                                        <h4>Breathing Exercise</h4>
+                                        <p>2 min guided breathing</p>
+                                    </div>
+                                </button>
+                                <button class="action-btn meditation-btn">
+                                    <div class="action-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <div class="action-text">
+                                        <h4>Quick Meditation</h4>
+                                        <p>5 min mindfulness</p>
+                                    </div>
+                                </button>
+                                <button class="action-btn journal-btn">
+                                    <div class="action-icon">
+                                        <i class="fas fa-pen"></i>
+                                    </div>
+                                    <div class="action-text">
+                                        <h4>Journal Entry</h4>
+                                        <p>Express your thoughts</p>
+                                    </div>
+                                </button>
+                                <button class="action-btn resources-btn">
+                                    <div class="action-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                    <div class="action-text">
+                                        <h4>Resources</h4>
+                                        <p>Mental health guides</p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Widget Card -->
+                    <div class="dashboard-card calendar-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-calendar-alt"></i> Calendar</h3>
+                            <div class="calendar-controls">
+                                <button class="calendar-nav-btn" id="prev-month">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="current-month" id="current-month">September 2025</span>
+                                <button class="calendar-nav-btn" id="next-month">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <div class="calendar-day-name">Sun</div>
+                                    <div class="calendar-day-name">Mon</div>
+                                    <div class="calendar-day-name">Tue</div>
+                                    <div class="calendar-day-name">Wed</div>
+                                    <div class="calendar-day-name">Thu</div>
+                                    <div class="calendar-day-name">Fri</div>
+                                    <div class="calendar-day-name">Sat</div>
+                                </div>
+                                <div class="calendar-grid" id="calendar-grid">
+                                    <!-- Calendar dates will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Breathing Exercise Modal -->
+    <div class="modal" id="breathing-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Guided Breathing Exercise</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="breathing-circle-large">
+                    <div class="breathing-inner"></div>
+                    <div class="breathing-text">Breathe</div>
+                </div>
+                <div class="breathing-instructions">
+                    <p>Follow the circle's rhythm:</p>
+                    <p><strong>Inhale</strong> as it expands, <strong>exhale</strong> as it contracts</p>
+                </div>
+                <div class="breathing-controls">
+                    <button class="btn btn-primary" id="start-breathing">Start Exercise</button>
+                    <button class="btn btn-secondary" id="stop-breathing">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

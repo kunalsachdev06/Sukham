@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Signup - Sukham Mental Health Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/org-signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Left Side - Illustration -->
+        <div class="illustration-section">
+            <div class="brand-header">
+                <h1>🌿 Sukham</h1>
+                <p>Building trust in mental wellness together</p>
+            </div>
+            
+            <div class="illustration-content">
+                <div class="floating-elements">
+                    <div class="float-item float-1">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="float-item float-2">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="float-item float-3">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="float-item float-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="float-item float-5">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                </div>
+                
+                <div class="main-illustration">
+                    <div class="wellness-circle">
+                        <div class="inner-circle">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="orbit-ring">
+                            <div class="orbit-dot"></div>
+                            <div class="orbit-dot"></div>
+                            <div class="orbit-dot"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tagline">
+                    <h2>Empower Your Organization</h2>
+                    <p>Join thousands of organizations creating healthier, happier workplaces through comprehensive mental health support.</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Mental Health Resources</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Counselor Network</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Analytics & Wellness Insights</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customizable Wellness Programs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Signup Form -->
+        <div class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Create Your Organization Account</h2>
+                    <p>Start your journey toward better workplace mental health</p>
+                </div>
+
+                <form class="signup-form" id="organizationSignupForm">
+                    <div class="form-group">
+                        <label for="orgName">
+                            <i class="fas fa-building"></i>
+                            Organization Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="orgName" 
+                            name="orgName" 
+                            required 
+                            placeholder="Enter your organization name"
+                            autocomplete="organization"
+                        >
+                        <span class="error-message" id="orgNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-user"></i>
+                            Unique Username
+                        </label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            required 
+                            placeholder="Choose a unique username for login"
+                            autocomplete="username"
+                        >
+                        <span class="input-hint">This will be used for logging in</span>
+                        <span class="error-message" id="usernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="organization@company.com"
+                            autocomplete="email"
+                        >
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    required 
+                                    placeholder="Create a strong password"
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="toggle-password" data-target="password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                <i class="fas fa-lock"></i>
+                                Confirm Password
+                            </label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    required 
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="toggle-password" data-target="confirmPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">
+                                I agree to the 
+                                <a href="#terms" target="_blank">Terms & Conditions</a> 
+                                and 
+                                <a href="#privacy" target="_blank">Privacy Policy</a>
+                            </span>
+                        </label>
+                        <span class="error-message" id="agreeTermsError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">
+                                Send me updates about new features and mental health resources
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="signup-btn" id="signupBtn">
+                        <span class="btn-text">Create Account</span>
+                        <div class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </button>
+
+                    <div class="form-footer">
+                        <p>Already have an account? 
+                            <a href="org-login.html">Sign in here</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>Account Created Successfully!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to Sukham! Your organization account has been created.</p>
+                <p>Please check your email for verification instructions.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="continueBtn">Continue to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/org-signup.js"></script>
+</body>
+</html>

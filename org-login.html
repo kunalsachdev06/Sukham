@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Login - Sukham Mental Health Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/org-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Background Illustration -->
+        <div class="bg-illustration">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        
+        <!-- Login Card -->
+        <div class="login-card">
+            <!-- Header -->
+            <div class="login-header">
+                <div class="logo">
+                    <h1>🌿 Sukham</h1>
+                    <p>Organization Portal</p>
+                </div>
+                
+                <div class="welcome-illustration">
+                    <div class="community-circle">
+                        <div class="center-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="orbit-users">
+                            <div class="user-dot user-1"></div>
+                            <div class="user-dot user-2"></div>
+                            <div class="user-dot user-3"></div>
+                            <div class="user-dot user-4"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Welcome Back</h2>
+                <p>Sign in to access your organization's mental wellness dashboard</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="login-form" id="organizationLoginForm">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Organization Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        placeholder="Enter your organization username"
+                        autocomplete="username"
+                        autofocus
+                    >
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Password
+                    </label>
+                    <div class="password-input">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="toggle-password" data-target="password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Remember me</span>
+                    </label>
+                    
+                    <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="login-btn" id="loginBtn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="btn-loader">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+                
+                <div class="login-footer">
+                    <p>Don't have an account? 
+                        <a href="org-signup.html">Sign up here</a>
+                    </p>
+                </div>
+            </form>
+            
+            <!-- Support Section -->
+            <div class="support-section">
+                <div class="support-card">
+                    <i class="fas fa-headset"></i>
+                    <div class="support-text">
+                        <h4>Need Help?</h4>
+                        <p>Contact our support team for assistance</p>
+                        <a href="#support" class="support-link">Get Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reset Your Password</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your organization's email address and we'll send you a link to reset your password.</p>
+                <div class="form-group">
+                    <label for="resetEmail">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+                    <input 
+                        type="email" 
+                        id="resetEmail" 
+                        placeholder="organization@company.com"
+                        required
+                    >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelReset">Cancel</button>
+                <button class="btn-primary" id="sendResetLink">Send Reset Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/org-login.js"></script>
+</body>
+</html>

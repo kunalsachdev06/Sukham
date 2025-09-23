@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sukham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>🌿 Sukham</h2>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>We're glad you're here today 🌸</p>
+                </div>
+                
+                <form class="auth-form" id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn microsoft-btn">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                </div>
+
+                <div class="crisis-notice">
+                    <div class="crisis-icon">🆘</div>
+                    <div class="crisis-content">
+                        <p><strong>In Crisis?</strong></p>
+                        <p>If you're having thoughts of self-harm, please reach out immediately:</p>
+                        <div class="crisis-contacts">
+                            <a href="tel:988" class="crisis-link">📞 988 (US Crisis Lifeline)</a>
+                            <a href="tel:1800599019" class="crisis-link">📞 1800-599-019 (India KIRAN)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-illustration">
+                <div class="illustration-content">
+                    <div class="floating-elements">
+                        <div class="element element-1">🌱</div>
+                        <div class="element element-2">💚</div>
+                        <div class="element element-3">🌸</div>
+                        <div class="element element-4">✨</div>
+                    </div>
+                    <h2>Your Mental Health Journey Starts Here</h2>
+                    <p>Join thousands of students who have found peace, balance, and support through Sukham.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>10,000+</strong>
+                            <span>Students Supported</span>
+                        </div>
+                        <div class="stat">
+                            <strong>24/7</strong>
+                            <span>AI Support</span>
+                        </div>
+                        <div class="stat">
+                            <strong>95%</strong>
+                            <span>Report Improvement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

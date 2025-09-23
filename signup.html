@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sukham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>🌿 Sukham</h2>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Form Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Join Sukham Today</h1>
+                    <p>Your journey to better mental health starts here 🌟</p>
+                </div>
+                
+                <form class="auth-form" id="signup-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="institution">Institution</label>
+                        <div class="input-group">
+                            <i class="fas fa-graduation-cap"></i>
+                            <input type="text" id="institution" name="institution" placeholder="Your college/university" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <div class="input-group">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="studentId" name="studentId" placeholder="Student ID">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program">Program</label>
+                            <div class="input-group">
+                                <i class="fas fa-book"></i>
+                                <select id="program" name="program" required>
+                                    <option value="">Select program</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="medicine">Medicine</option>
+                                    <option value="business">Business</option>
+                                    <option value="arts">Arts & Humanities</option>
+                                    <option value="science">Science</option>
+                                    <option value="law">Law</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Create a password" required>
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter">
+                            <span class="checkmark"></span>
+                            Send me mental health tips and updates
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Create Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or sign up with</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn microsoft-btn">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign in here</a></p>
+                </div>
+
+                <div class="privacy-notice">
+                    <div class="privacy-icon">🔒</div>
+                    <div class="privacy-content">
+                        <p><strong>Your Privacy Matters</strong></p>
+                        <p>All conversations are confidential. We use industry-standard encryption to protect your data and mental health information.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-illustration">
+                <div class="illustration-content">
+                    <div class="floating-elements">
+                        <div class="element element-1">🌱</div>
+                        <div class="element element-2">💚</div>
+                        <div class="element element-3">🌸</div>
+                        <div class="element element-4">✨</div>
+                    </div>
+                    <h2>Start Your Wellness Journey</h2>
+                    <p>Get personalized mental health support, track your progress, and connect with a caring community.</p>
+                    <div class="features-preview">
+                        <div class="feature-preview">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Companion</span>
+                        </div>
+                        <div class="feature-preview">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Progress Tracking</span>
+                        </div>
+                        <div class="feature-preview">
+                            <i class="fas fa-users"></i>
+                            <span>Peer Support</span>
+                        </div>
+                        <div class="feature-preview">
+                            <i class="fas fa-book-open"></i>
+                            <span>Resources</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Dashboard - Sukham Mental Health Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/org-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <h2>🌿 Sukham</h2>
+                    <span>Organization Portal</span>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <a href="#dashboard">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#members">
+                        <i class="fas fa-users"></i>
+                        <span>Members</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#analytics">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#events">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Events</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#resources">
+                        <i class="fas fa-book-open"></i>
+                        <span>Resources</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="help-section">
+                    <i class="fas fa-life-ring"></i>
+                    <span>Need Help?</span>
+                    <small>Contact our support team</small>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="org-info">
+                        <h1 id="orgName">Wellness Corp</h1>
+                        <span class="org-badge">Premium Organization</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-count">3</span>
+                        </button>
+                    </div>
+                    
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" id="profileBtn">
+                            <img src="https://via.placeholder.com/40" alt="Profile" class="profile-avatar">
+                            <span>Admin</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        
+                        <div class="dropdown-menu" id="profileDropdown">
+                            <a href="#profile" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                Profile Settings
+                            </a>
+                            <a href="#settings" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Organization Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#logout" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <div class="welcome-card">
+                        <div class="welcome-text">
+                            <h2>Welcome back, <span id="welcomeOrgName">Wellness Corp</span>! 👋</h2>
+                            <p>Here's what's happening with your mental health platform today</p>
+                        </div>
+                        <div class="welcome-illustration">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Stats -->
+                <section class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon members">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>248</h3>
+                                <p>Active Members</p>
+                                <span class="stat-change positive">+12 this week</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon events">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>15</h3>
+                                <p>Events Hosted</p>
+                                <span class="stat-change positive">+3 this month</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon activities">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>89</h3>
+                                <p>Activities This Week</p>
+                                <span class="stat-change positive">+23%</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon sessions">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>156</h3>
+                                <p>Counseling Sessions</p>
+                                <span class="stat-change neutral">Stable</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Announcements -->
+                    <section class="announcements-section">
+                        <div class="section-header">
+                            <h3>
+                                <i class="fas fa-bullhorn"></i>
+                                Latest Announcements
+                            </h3>
+                            <button class="view-all-btn">View All</button>
+                        </div>
+                        
+                        <div class="announcements-list">
+                            <div class="announcement-item">
+                                <div class="announcement-icon important">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="announcement-content">
+                                    <h4>New Mental Health Workshop</h4>
+                                    <p>Join our stress management workshop this Friday at 3 PM</p>
+                                    <span class="announcement-time">2 hours ago</span>
+                                </div>
+                            </div>
+
+                            <div class="announcement-item">
+                                <div class="announcement-icon info">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="announcement-content">
+                                    <h4>Platform Update Available</h4>
+                                    <p>New features for better member engagement now available</p>
+                                    <span class="announcement-time">1 day ago</span>
+                                </div>
+                            </div>
+
+                            <div class="announcement-item">
+                                <div class="announcement-icon success">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="announcement-content">
+                                    <h4>Monthly Report Ready</h4>
+                                    <p>Your organization's wellness analytics report is now available</p>
+                                    <span class="announcement-time">3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quick Actions -->
+                    <section class="quick-actions-section">
+                        <div class="section-header">
+                            <h3>
+                                <i class="fas fa-bolt"></i>
+                                Quick Actions
+                            </h3>
+                        </div>
+                        
+                        <div class="quick-actions-grid">
+                            <button class="action-card primary">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Schedule Wellness Session</span>
+                            </button>
+
+                            <button class="action-card secondary">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add New Member</span>
+                            </button>
+
+                            <button class="action-card tertiary">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Resources</span>
+                            </button>
+
+                            <button class="action-card quaternary">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>View Analytics</span>
+                            </button>
+
+                            <button class="action-card primary">
+                                <i class="fas fa-envelope"></i>
+                                <span>Send Newsletter</span>
+                            </button>
+
+                            <button class="action-card secondary">
+                                <i class="fas fa-cogs"></i>
+                                <span>Manage Settings</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Sukham Mental Health Platform. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#help">Help Center</a>
+                <span>•</span>
+                <a href="#privacy">Privacy Policy</a>
+                <span>•</span>
+                <a href="#support">24/7 Support Helpline: 1-800-MENTAL</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/org-dashboard.js"></script>
+</body>
+</html>
