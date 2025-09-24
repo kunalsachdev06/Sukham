@@ -9,6 +9,7 @@ function initializeDashboard() {
     initializeNotifications();
     initializeQuickActions();
     loadOrganizationData();
+    initializeCharts();
 }
 
 // Sidebar functionality
@@ -350,6 +351,115 @@ function updateNotificationCount() {
             notificationCount.style.display = 'block';
         }
     }
+}
+
+// Initialize Charts
+function initializeCharts() {
+    initializeCommonIssuesChart();
+}
+
+// Common Issues Horizontal Bar Chart
+function initializeCommonIssuesChart() {
+    const ctx = document.getElementById('commonIssuesChart');
+    if (!ctx) return;
+
+    const chartData = {
+        labels: ['Anxiety/Stress', 'Academic Pressure', 'Social Isolation', 'Sleep Issues', 'Family Issues'],
+        datasets: [{
+            label: 'Student Issues Distribution',
+            data: [34, 28, 19, 12, 7],
+            backgroundColor: [
+                '#FF6B6B',  // Red for Anxiety/Stress
+                '#4ECDC4',  // Teal for Academic Pressure
+                '#45B7D1',  // Blue for Social Isolation
+                '#96CEB4',  // Green for Sleep Issues
+                '#FFEAA7'   // Yellow for Family Issues
+            ],
+            borderColor: [
+                '#FF5252',
+                '#26A69A',
+                '#2196F3',
+                '#66BB6A',
+                '#FFCA28'
+            ],
+            borderWidth: 1,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    };
+
+    const chartOptions = {
+        indexAxis: 'y', // This makes it horizontal
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false // Hide legend since we have custom labels
+            },
+            tooltip: {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                titleColor: '#fff',
+                bodyColor: '#fff',
+                borderColor: '#A7C7E7',
+                borderWidth: 1,
+                cornerRadius: 8,
+                callbacks: {
+                    label: function(context) {
+                        return `${context.parsed.x}% of students`;
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                beginAtZero: true,
+                max: 40,
+                ticks: {
+                    callback: function(value) {
+                        return value + '%';
+                    },
+                    color: '#666',
+                    font: {
+                        size: 12
+                    }
+                },
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.1)',
+                    drawBorder: false
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#333',
+                    font: {
+                        size: 12,
+                        weight: '500'
+                    }
+                },
+                grid: {
+                    display: false
+                }
+            }
+        },
+        layout: {
+            padding: {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                right: 10
+            }
+        },
+        animation: {
+            duration: 1500,
+            easing: 'easeInOutCubic'
+        }
+    };
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: chartOptions
+    });
 }
 
 // Initialize tooltips (if needed)
